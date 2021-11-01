@@ -40,13 +40,13 @@ func TestDomainsService_List(t *testing.T) {
 			"domains": [
 				{
 					"id": 2238269,
-					"status": "enable"
-
+					"status": "enable",
+					"records": "12"
 				},
 				{
 					"id": 10360095,
-					"status": "enable"
-
+					"status": "enable",
+					"records": 1
 				}
 			]}`)
 	})
@@ -57,7 +57,7 @@ func TestDomainsService_List(t *testing.T) {
 		t.Errorf("Domains.List returned error: %v", err)
 	}
 
-	want := []Domain{{ID: "2238269", Status: "enable"}, {ID: "10360095", Status: "enable"}}
+	want := []Domain{{ID: "2238269", Status: "enable", Records: "12"}, {ID: "10360095", Status: "enable", Records: "1"}}
 	if !reflect.DeepEqual(domains, want) {
 		t.Errorf("Domains.List returned %+v, want %+v", domains, want)
 	}
