@@ -38,7 +38,7 @@ type Domain struct {
 	GradeTitle       string      `json:"grade_title,omitempty"`
 	Status           string      `json:"status,omitempty"`
 	ExtStatus        string      `json:"ext_status,omitempty"`
-	Records          string      `json:"records,omitempty"`
+	Records          json.Number `json:"records,omitempty"`
 	GroupID          json.Number `json:"group_id,omitempty"`
 	IsMark           string      `json:"is_mark,omitempty"`
 	Remark           string      `json:"remark,omitempty"`
